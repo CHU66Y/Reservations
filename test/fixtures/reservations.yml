@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  outlet: MyString
+  date: MyString
+  party: MyString
+  patron_id: MyString
+  last_name: MyString
+  first_name: MyString
+  supervisor: MyString
+  comments: MyString
+
+two:
+  outlet: MyString
+  date: MyString
+  party: MyString
+  patron_id: MyString
+  last_name: MyString
+  first_name: MyString
+  supervisor: MyString
+  comments: MyString

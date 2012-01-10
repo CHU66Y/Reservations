@@ -1,0 +1,35 @@
+
+/*Main*/
+textarea
+{
+	width:10px;
+}
+
+/*header*/
+#header
+{
+	text-align:center;
+	color: #000000;
+ 	font-size:30px ;
+ 	background-color: #FFFFFF;
+}
+
+/*body*/
+body
+{
+	font-family: Cooper Black;
+	background-color: Black;
+	color: #FFFFFF;
+}
+
+/*footer*/
+#footer
+{
+	text-align:center;
+	width:100%;
+	height:auto; 
+	margin-top:10px; 
+}
+
+
+

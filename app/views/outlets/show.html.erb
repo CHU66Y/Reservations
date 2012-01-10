@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Outlet:</b>
+  <%= @outlet.outlet %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @outlet.capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_outlet_path(@outlet) %> |
+<%= link_to 'Back', outlets_path %>
