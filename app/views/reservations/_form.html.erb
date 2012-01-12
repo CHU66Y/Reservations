@@ -16,8 +16,8 @@
     <%= select :reservation, :outlet, Outlet.find(:all).collect{|p| [p.outlet]}%>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.text_field :date %>
+    <%= f.label :res_date %><br />
+    <%= f.text_field :res_date, :class => "datepicker" %>
   </div>
     <div class="field">
     <%= f.label :time %><br />

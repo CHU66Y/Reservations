@@ -7,3 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function (){
+        $('#reservation_res_date').datepicker({dateFormat: "yy-mm-dd"});
+});

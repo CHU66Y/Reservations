@@ -4,7 +4,7 @@
 <table border =1>
   <tr>
     <th>Outlet</th>
-    <th>Date</th>
+    <th>Res Date</th>
     <th>Time</th>
     <th>Party</th>
     <th>Patron</th>
@@ -19,7 +19,7 @@
 <% @reservations.each do |reservation| %>
   <tr>
     <td><%= reservation.outlet %></td>
-    <td><%= reservation.date %></td>
+    <td><%= reservation.res_date %></td>
     <td><%= reservation.time%></td>
     <td><%= reservation.party %></td>
     <td><%= reservation.patron_id %></td>
