@@ -1,15 +1,30 @@
 class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
-  def index
-    @reservations = Reservation.where :outlet => 'Cedar'
-
+  def stgermains
+    @reservations = Reservation.where :outlet => "St Germain's"
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @reservations }
+    end
+  end
+  
+    def cedar
+    @reservations = Reservation.where :outlet => "Cedar"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
     end
   end
 
+    def lombardis
+    @reservations = Reservation.where :outlet => "Lombardi's"
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @reservations }
+    end
+  end
+  
   # GET /reservations/1
   # GET /reservations/1.json
   def show

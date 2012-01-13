@@ -8,7 +8,10 @@ Reservations::Application.routes.draw do
    root :to => 'home#home'
    
    match 'about' => 'home#about'
-
+   match 'stgermains' => 'reservations#stgermains'
+   match 'cedar' => 'reservations#cedar'
+   match 'lombardis' => 'reservations#lombardis'
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
