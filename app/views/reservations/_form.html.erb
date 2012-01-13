@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :outlet %><br />
-    <%= select :reservation, :outlet, Outlet.find(:all).collect{|p| [p.outlet]}%>
+    <%= f.text_field :outlet, :value=> "#{@outlet}", :readonly => 'readonly'%>
   </div>
   <div class="field">
     <%= f.label :res_date %><br />

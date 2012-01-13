@@ -2,7 +2,11 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def stgermains
-    @reservations = Reservation.where :outlet => "St Germain's"
+    #@reservations = Reservation.recent.where :outlet => "St Germain's"
+    @search = Reservation.search(params[:search])
+    @reservations = @search.where(:outlet => "St Germain's")
+
+    #@today = Reservation.where(:res_date => Time.now.strftime("%Y-%m-%d"))
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
@@ -10,7 +14,9 @@ class ReservationsController < ApplicationController
   end
   
     def cedar
-    @reservations = Reservation.where :outlet => "Cedar"
+    #@reservations = Reservation.recent.where :outlet => "Cedar"
+    @search = Reservation.search(params[:search])
+    @reservations = @search.where(:outlet => "Cedar")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
@@ -18,7 +24,9 @@ class ReservationsController < ApplicationController
   end
 
     def lombardis
-    @reservations = Reservation.where :outlet => "Lombardi's"
+    #@reservations = Reservation.recent.where :outlet => "Lombardi's"
+    @search = Reservation.search(params[:search])
+    @reservations = @search.where(:outlet => "Lombardi's")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
@@ -40,7 +48,7 @@ class ReservationsController < ApplicationController
   # GET /reservations/new.json
   def new
     @reservation = Reservation.new
-    
+    @outlet = params[:outlet]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -58,7 +66,17 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(params[:reservation])
     @reservation.save
-    redirect_to reservations_path
+    if @reservation.outlet == "St Germain's"
+      redirect_to stgermains_path
+    else
+      if @reservation.outlet == "Cedar"
+        redirect_to cedar_path
+    else
+      if @reservation.outlet == "Lombardi's"
+        redirect_to lombardis_path
+      end
+      end
+    end
   end
 
   # PUT /reservations/1
@@ -66,7 +84,17 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     @reservation.update_attributes(params[:reservation])
-    redirect_to reservations_path
+        if @reservation.outlet == "St Germain's"
+      redirect_to stgermains_path
+    else
+      if @reservation.outlet == "Cedar"
+        redirect_to cedar_path
+    else
+      if @reservation.outlet == "Lombardi's"
+        redirect_to lombardis_path
+      end
+      end
+    end
   end
 
   # DELETE /reservations/1
@@ -74,10 +102,17 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+        if @reservation.outlet == "St Germain's"
+      redirect_to stgermains_path
+    else
+      if @reservation.outlet == "Cedar"
+        redirect_to cedar_path
+    else
+      if @reservation.outlet == "Lombardi's"
+        redirect_to lombardis_path
+      end
+      end
+    end 
 
-    respond_to do |format|
-      format.html { redirect_to reservations_url }
-      format.json { head :ok }
-    end
   end
 end

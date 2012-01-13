@@ -35,4 +35,4 @@
 
 <br />
 
-<%= button_to 'New Reservation', new_reservation_path, method: :get %>
+<%= link_to 'New Reservation', new_reservation_path(:outlet => @reservations.last.outlet)%>
