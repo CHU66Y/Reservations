@@ -8,10 +8,5 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function (){
-        $('#reservation_res_date').datepicker({dateFormat: "yy-mm-dd"});
-});
 
-$(function (){
-        $('#stgermains_res_date_equals').datepicker({dateFormat: "yy-mm-dd"});
-});
+

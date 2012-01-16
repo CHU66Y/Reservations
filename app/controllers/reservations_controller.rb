@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
     #@reservations = Reservation.recent.where :outlet => "St Germain's"
     @search = Reservation.search(params[:search])
     @reservations = @search.where(:outlet => "St Germain's")
-
     #@today = Reservation.where(:res_date => Time.now.strftime("%Y-%m-%d"))
     respond_to do |format|
       format.html # index.html.erb
