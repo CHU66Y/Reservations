@@ -4,16 +4,16 @@
 <table border =1>
   <tr>
     <th>Outlet</th>
-    <th>Res Date</th>
+    <th>Date</th>
     <th>Time</th>
     <th>Party</th>
-    <th>Patron</th>
+    <th>Parton Account</th>
     <th>Last name</th>
     <th>First name</th>
     <th>Supervisor</th>
     <th>Comments</th>
     <th>Edit</th>
-    <th>Destroy</th>
+    <th>Cancel</th>
   </tr>
 
 <% @reservations.each do |reservation| %>
@@ -27,8 +27,8 @@
     <td><%= reservation.first_name %></td>
     <td><%= reservation.supervisor %></td>
     <td><%= reservation.comments %></td>
-    <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-    <td><%= link_to 'Destroy', reservation, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Edit', edit_reservation_path(reservation, :outlet => @reservations.first.outlet) %></td>
+    <td><%= link_to 'Cancel', reservation, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -36,3 +36,5 @@
 <br />
 
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @reservations.first.outlet)%>
+
+

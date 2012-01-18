@@ -2,15 +2,23 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def stgermains
-    #@reservations = Reservation.recent.where :outlet => "St Germain's"
+    #@index = Reservation.where(:res_date => Date.today)
     @search = Reservation.search(params[:search])
     @reservations = @search.where(:outlet => "St Germain's")
-    #@today = Reservation.where(:res_date => Time.now.strftime("%Y-%m-%d"))
+    
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
     end
   end
+  
+        
+    #def sum(time)
+    #  @reservations.where(:time => time).sum(:party)
+    #end 
+  
+  
   
     def cedar
     #@reservations = Reservation.recent.where :outlet => "Cedar"
@@ -58,6 +66,7 @@ class ReservationsController < ApplicationController
   # GET /reservations/1/edit
   def edit
     @reservation = Reservation.find(params[:id])
+    @outlet = params[:outlet]
   end
 
   # POST /reservations
@@ -115,3 +124,5 @@ class ReservationsController < ApplicationController
 
   end
 end
+
+
