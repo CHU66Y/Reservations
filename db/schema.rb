@@ -21,17 +21,17 @@ ActiveRecord::Schema.define(:version => 20120110134415) do
 
   create_table "outlets", :force => true do |t|
     t.string   "outlet"
-    t.string   "capacity"
+    t.integer  "capacity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "reservations", :force => true do |t|
     t.string   "outlet"
-    t.string   "date"
+    t.string   "res_date"
     t.string   "time"
-    t.string   "party"
-    t.string   "patron_id"
+    t.integer  "party"
+    t.integer  "patron_id"
     t.string   "last_name"
     t.string   "first_name"
     t.string   "supervisor"

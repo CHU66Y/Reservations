@@ -35,6 +35,16 @@
 
 <br />
 
-<%= link_to 'New Reservation', new_reservation_path(:outlet => @reservations.first.outlet)%>
+<% if @stgermains == "St Germain's" %>
+<%= link_to 'New Reservation', new_reservation_path(:outlet => @stgermains)%>
+<%end%>
+<% if @lombardis == "Lombardi's" %>
+<%= link_to 'New Reservation', new_reservation_path(:outlet => @lombardis)%>
+<%end%>
+<% if @cedar == "Cedar" %>
+<%= link_to 'New Reservation', new_reservation_path(:outlet => @cedar)%>
+<%end%>
+
+<!--(:outlet => @reservations.first.outlet)-->
 
 
