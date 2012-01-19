@@ -5,6 +5,4 @@ module ReservationsHelper
   end
 
 
-
-
 end

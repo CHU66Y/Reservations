@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def stgermains
+    
     @search = Reservation.search(params[:search])
     @reservations = @search.where(:outlet => "St Germain's")
     @intervals = Interval.all
