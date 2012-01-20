@@ -1,0 +1,26 @@
+<table border = 1>
+	 <% if @search.res_date_equals == nil %>
+Party Count </br><%= Time.now.strftime('%Y-%m-%d') %>
+<% else%>
+Party Count </br> <%= @search.res_date_equals%>
+<% end%>
+
+<th>Time</th>
+<th>Count</th>
+<% @intervals.each do |e| %>
+<tr>
+  <td><%=  e.interval%></td>
+  <% if @search.res_date_equals == nil %>
+     <% i = count @time_now, e.interval %>
+  <% else %>
+  <% i = count @search.res_date_equals, e.interval %>
+<%end %>
+ 
+   <% if i.first.total_patrons != nil %>
+       <td><%= i.first.total_patrons %></td>
+   <% else %>
+       <td><%= "0" %></td>
+   <% end %>
+
+</tr>
+<% end %>

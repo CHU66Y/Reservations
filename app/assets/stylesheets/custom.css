@@ -1,31 +1,49 @@
-
-
-/*header*/
 #header
 {
-	font-family: Mufferaw;
-	text-align:center;
-	color: #000000;
- 	font-size:40px ;
- 	background-color: #FFFFFF;
+
 }
 
-/*body*/
 body
 {
-	font-family: Cooper Black;
-	background-color: Black;
-	color: #FFFFFF;
+	margin: 0;
+	padding: 0;
 }
 
-/*footer*/
+#container
+{
+	margin: 1em auto;
+	background: #fff;
+	margin-left: 20px;
+}
+#menu
+{
+	float: right;
+	width: 165px;
+	background: #6F9;
+}
+
+#content
+{
+	float: left;
+	margin: 0 0 0 20px;
+
+}
+
 #footer
 {
-	text-align:center;
-	width:100%;
-	height:auto; 
-	margin-top:10px; 
+	clear: both;
+	text-align: center;
+}
+#aside
+{
+	float: right;
+	width: 240px;
+	padding: 20px 0;
+	margin: 0 20px 0 0;
+	display: inline;
 }
 
-
-
+textarea
+{
+	height:100px;
+}
