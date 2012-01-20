@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-<div id="container">
-	<div id="header">
-			<%= render 'layouts/header'%>
-  			<title>Reservations</title>
-    		<%= stylesheet_link_tag "application" %>
-    		<%= csrf_meta_tags %>
-    		<%= javascript_include_tag "application" %>
-	</div>
-
-	<div id="content-container">
-		<div id="content">
-
-		<%= yield %>
 
 
-		</div>
-
-		<div id="footer">
-			<%= render 'layouts/footer'%>
-		</div>
-	</div>
+<div id="header">
+	<%= render 'layouts/header'%>
+  	<title>Reservations</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
 </div>
+<div id="content">
+<body>
+
+<%= yield %>	
+
+</body>	
+</div>
+
+<div id="footer">
+
+	<%= render 'layouts/footer'%>
+
+
+</div>
+
+
 </html>

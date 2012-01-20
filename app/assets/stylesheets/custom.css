@@ -1,47 +1,30 @@
-#header
-{
-
+#draggable_interval 
+{ 
+	width: 150px; height: 150px; padding: 0.5em; style="position: relative; left: 1088px; top: -225px;
+	border: none;
 }
 
-body
-{
-	margin: 0;
-	padding: 0;
+#draggable_reservation 
+{ 
+	width: 1000px; height: 150px; padding: 0.5em; style="position: relative; left: 84px; top: 9px; 
+	border: none;
 }
 
-#container
+
+#footer
 {
-	margin: 1em auto;
-	background: #fff;
-	margin-left: 20px;
-}
-#menu
-{
-	float: right;
-	width: 165px;
-	background: #6F9;
+
+	text-align: center;
 }
 
 #content
 {
-	float: left;
-	margin: 0 0 0 20px;
-
-}
-
-#footer
-{
-	clear: both;
-	text-align: center;
-}
-#aside
-{
-	float: right;
-	width: 240px;
-	padding: 20px 0;
-	margin: 0 20px 0 0;
+	width: 800px;
+	padding: 30px;
+	margin-right 50px;
 	display: inline;
 }
+
 
 textarea
 {
