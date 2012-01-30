@@ -1,12 +1,23 @@
 class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
-  def stgermains
+  
+  def find_res_by_date(outlet)
     
+    search_cond = Date.today
+    
+    if (params[:search].nil? == false) 
+      search_cond = params[:search][:res_date_equals]
+    end
+    @res_search = Reservation.find(:all, :conditions => {:res_date => search_cond, :outlet => outlet })
     @search = Reservation.search(params[:search])
-    @reservations = @search.where(:outlet => "St Germain's")
     @intervals = Interval.all
     @time_now = Time.now.strftime('%Y-%m-%d')
+    return @res_search
+  end
+  
+  def stgermains
+    @reservations = find_res_by_date("St Germain's")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,19 +25,11 @@ class ReservationsController < ApplicationController
     end
   end
   
-        
-    #def sum(time)
-    #  @reservations.where(:time => time).sum(:party)
-    #end 
-  
-  
+ 
   
     def cedar
-    #@reservations = Reservation.recent.where :outlet => "Cedar"
-    @search = Reservation.search(params[:search])
-    @reservations = @search.where(:outlet => "Cedar")
-    @intervals = Interval.all
-    @time_now = Time.now.strftime('%Y-%m-%d')
+    @reservations = find_res_by_date("Cedar")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }
@@ -34,11 +37,8 @@ class ReservationsController < ApplicationController
   end
 
     def lombardis
-    #@reservations = Reservation.recent.where :outlet => "Lombardi's"
-    @search = Reservation.search(params[:search])
-    @reservations = @search.where(:outlet => "Lombardi's")
-    @intervals = Interval.all
-    @time_now = Time.now.strftime('%Y-%m-%d')
+    @reservations = find_res_by_date("Lombardi's")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reservations }

@@ -1,4 +1,5 @@
 
+ 
 <div id="draggable_reservation" class="ui-widget-content">	
 <table border =1>
   <tr>
@@ -15,7 +16,7 @@
     <th>Cancel</th>
   </tr>
 
-<% @reservations.each do |reservation| %>
+<% @reservations.each do |reservation|%>
   <tr>
     <td><%= reservation.outlet %></td>
     <td><%= reservation.res_date %></td>
@@ -42,6 +43,7 @@
 <%end%>
 </table>
 </div>
+
 
 <div id="draggable_interval" class="ui-widget-content">
 	<table border = 1>
@@ -72,7 +74,5 @@ Party Count </br> <%= @search.res_date_equals%>
 <% end %>
 </table>
 </div>
-
-
 
 
