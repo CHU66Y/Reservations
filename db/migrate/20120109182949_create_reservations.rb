@@ -3,7 +3,7 @@ class CreateReservations < ActiveRecord::Migration
     create_table :reservations do |t|
       t.string :outlet
       t.string :res_date
-      t.string :time
+      t.time :time
       t.integer :party
       t.integer :patron_id
       t.string :last_name

@@ -10,7 +10,7 @@
 
 <% @intervals.each do |interval| %>
   <tr>
-    <td><%= interval.interval %></td>
+    <td><%= interval.interval.strftime('%H:%M') %></td>
     <td><%= link_to 'Show', interval %></td>
     <td><%= link_to 'Edit', edit_interval_path(interval) %></td>
     <td><%= link_to 'Destroy', interval, confirm: 'Are you sure?', method: :delete %></td>

@@ -1,7 +1,7 @@
 class CreateIntervals < ActiveRecord::Migration
   def change
     create_table :intervals do |t|
-      t.string :interval
+      t.time :interval
 
       t.timestamps
     end

@@ -20,7 +20,7 @@
   <tr>
     <td><%= reservation.outlet %></td>
     <td><%= reservation.res_date %></td>
-    <td><%= reservation.time%></td>
+    <td><%= reservation.res_time.strftime('%H:%M') %></td>
     <td><%= reservation.party %></td>
     <td><%= reservation.patron_id %></td>
     <td><%= reservation.last_name %></td>
@@ -31,7 +31,9 @@
     <td><%= link_to 'Cancel', reservation, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
-
+</table>
+<p>
+<center>
 <% if @outlet == "St Germain's" %>
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @outlet)%>
 <%end%>
@@ -41,23 +43,21 @@
 <% if @outlet == "Cedar" %>
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @outlet)%>
 <%end%>
-</table>
+</center>
 </div>
 
 
 <div id="draggable_interval" class="ui-widget-content">
-	<table border = 1>
-	 <% if @search.res_date_equals == nil %>
-Party Count </br><%= Time.now.strftime('%Y-%m-%d') %>
-<% else%>
-Party Count </br> <%= @search.res_date_equals%>
-<% end%>
-
+<table border = 1>
+<b>Party Count</b> 
+<!--
+<%= @search.res_date_equals%>
+-->
 <th>Time</th>
 <th>Count</th>
 <% @intervals.each do |e| %>
 <tr>
-  <td><%=  e.interval%></td>
+  <td><%=  e.interval.strftime('%H:%M')%></td>
   <% if @search.res_date_equals == nil %>
      <% i = count @time_now, e.interval %>
   <% else %>

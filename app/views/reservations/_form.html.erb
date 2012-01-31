@@ -22,7 +22,7 @@
   </div>  
     <div class="field">
     <%= f.label :time %><br />
-    <%= select :reservation, :time, Interval.find(:all).collect{|p| [p.interval]}%>
+    <%= select :reservation, :res_time, Interval.find(:all).collect{|p| [p.interval.strftime('%H:%M')]}%>
   </div>
   <div class="field">
     <%= f.label :party%><br />
