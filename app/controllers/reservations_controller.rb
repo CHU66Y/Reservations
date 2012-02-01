@@ -76,21 +76,29 @@ class ReservationsController < ApplicationController
 
   # POST /reservations
   # POST /reservations.json
-  def create
+    def create
     @reservation = Reservation.new(params[:reservation])
-    @reservation.save
-    if @reservation.outlet == "St Germain's"
-      redirect_to stgermains_path
-    else
-      if @reservation.outlet == "Cedar"
-        redirect_to cedar_path
-    else
-      if @reservation.outlet == "Lombardi's"
-        redirect_to lombardis_path
-      end
+
+    respond_to do |format|
+      if @reservation.save
+        if @reservation.outlet == "St Germain's"
+          format.html { redirect_to stgermains_path, notice: 'Reservation was successfully created.' }
+        else
+          if @reservation.outlet == "Cedar"
+            format.html { redirect_to cedar_path, notice: 'Reservation was successfully created.' }
+          else
+            if @reservation.outlet == "Lombardi's"
+              format.html { redirect_to lombardis_path, notice: 'Reservation was successfully created.' }
+            end
+          end
+        end
+      else
+        format.html { render "new" }
+        format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end
   end
+  
 
   # PUT /reservations/1
   # PUT /reservations/1.json

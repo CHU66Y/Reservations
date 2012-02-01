@@ -32,14 +32,18 @@
   </tr>
 <% end %>
 </table>
+
 <p>
+
 <center>
 <% if @outlet == "St Germain's" %>
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @outlet)%>
 <%end%>
+
 <% if @outlet == "Lombardi's" %>
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @outlet)%>
 <%end%>
+
 <% if @outlet == "Cedar" %>
 <%= link_to 'New Reservation', new_reservation_path(:outlet => @outlet)%>
 <%end%>

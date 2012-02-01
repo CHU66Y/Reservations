@@ -16,4 +16,5 @@ module ApplicationHelper
     lomb_logo = image_tag("lombardi.png", :size => "350x250")
   end
 
+
 end
