@@ -19,8 +19,9 @@ end
 gem 'jquery-rails'
 gem 'jquery_datepicker'
 gem 'kaminari'
-#gem 'by_star'
 gem 'meta_search'
+gem 'table-for'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
