@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120110134415) do
 
   create_table "intervals", :force => true do |t|
-    t.string   "interval"
+    t.time     "interval"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120110134415) do
   create_table "reservations", :force => true do |t|
     t.string   "outlet"
     t.string   "res_date"
-    t.string   "time"
+    t.time     "res_time"
     t.integer  "party"
     t.integer  "patron_id"
     t.string   "last_name"
